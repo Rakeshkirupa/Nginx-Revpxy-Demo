@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+    nodeserver:
+        build:
+            context: ./app1
+        ports:
+            - "5000:5000"
+    nodeserver1:
+        build:
+            context: ./app2
+        ports:
+            - "5001:5000"
+
+    nginx:
+        build:
+            context: ./nginx
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+
+
+
+
+
+    
